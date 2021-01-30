@@ -1,0 +1,42 @@
+body {
+  background-color: rgb(70, 65, 95);
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  overflow-y: scroll;
+  text-align: center;
+}
+hr {
+  border: 1px solid white;
+  width: 100%;
+}
+img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+input[type='button'] {
+  background-color: rgb(90, 100, 150);
+  border: solid lightgrey;
+  border-radius: 32px;
+  color: white;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 24px;
+  height: 32px;
+  position: relative;
+  top: 0px;
+  transition: 0.05s background-color;
+  width: 128px;
+}
+input[type='button']:active {
+  animation: up 0.25s infinite;
+  background-color: lightgrey;
+  padding: 0px;
+}
+@keyframes up {
+  from {
+    top: 0px;
+  }
+  to {
+    top: -5px;
+  }
+}
