@@ -7,13 +7,34 @@ form.addEventListener('submit', (event) => {
   gifs.innerHTML = ''
   axios.get(`https://api.giphy.com/v1/gifs/search?q=${inputFind.value}&api_key=DC0AenRuwr3bYszCS8hV90K09wN4iUmZ`)
     .then((response) => {
-      response.data.data.map((elem, id) => {
-        gifs.innerHTML += `<img src="${response.data.data[elem, id].images.original.url}" width="20%" />`
+      response.data.data.map((elem) => {
+        let image = document.createElement('img')
+        image.setAttribute('src', elem.images.downsized_still.url)
+        image.setAttribute('width', '20%')
+
+        function append() {
+          gifs.appendChild(image)
+        }
+        image.addEventListener('load', append)
+
+        let clickCount = 0
+        image.addEventListener('click', () => {
+          image.removeEventListener('load', append)
+          if (clickCount % 2 === 0) {
+            image.setAttribute('src', elem.images.downsized.url)
+          }
+          else {
+            image.setAttribute('src', elem.images.downsized_still.url)
+          }
+          clickCount++
+        })
       })
     })
   inputFind.value = ''
+  inputFind.focus()
 })
 inputDelete.addEventListener('click', () => {
   gifs.innerHTML = ''
   inputFind.value = ''
+  inputFind.focus()
 })
