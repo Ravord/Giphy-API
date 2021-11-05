@@ -10,7 +10,6 @@ form.addEventListener('submit', (event) => {
       data.data.map((elem) => {
         let image = document.createElement('img')
         image.setAttribute('src', elem.images.downsized_still.url)
-        image.setAttribute('width', '20%')
 
         function append() {
           gifs.appendChild(image)

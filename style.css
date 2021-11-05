@@ -6,17 +6,6 @@ body {
   text-align: center;
 }
 
-hr {
-  border: 1px solid white;
-  width: 100%;
-}
-
-img {
-  cursor: pointer;
-  margin-top: 8px;
-  vertical-align: middle;
-}
-
 .options {
   background-color: hsl(225, 30%, 40%);
   border: solid lightgrey;
@@ -45,4 +34,16 @@ img {
   to {
     top: -5px;
   }
+}
+
+hr {
+  border: 1px solid white;
+  width: 100%;
+}
+
+img {
+  cursor: pointer;
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 20%;
 }
