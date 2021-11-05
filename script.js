@@ -6,8 +6,8 @@ form.addEventListener('submit', (event) => {
   event.preventDefault()
   gifs.innerHTML = ''
   axios.get(`https://api.giphy.com/v1/gifs/search?q=${inputFind.value}&api_key=DC0AenRuwr3bYszCS8hV90K09wN4iUmZ`)
-    .then((response) => {
-      response.data.data.map((elem) => {
+    .then(({ data }) => {
+      data.data.map((elem) => {
         let image = document.createElement('img')
         image.setAttribute('src', elem.images.downsized_still.url)
         image.setAttribute('width', '20%')
